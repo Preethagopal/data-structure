@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+	int a[10],i;
+	printf("enter the number:");
+	scanf("%d",&a[i]);
+	for(i=0;i<10;i++)
+	scanf("%d",&a[i]);
+	printf("\neven numbers:\n");
+	for(i=0;i<10;i++)
+	{
+		if(a[i]%2==0)
+		printf("%d",a[i]);
+	}
+	printf("\n odd numbers:\n");
+	for(i=0;i<10;i++)
+	{
+		if(a[i]%2!=0)
+		printf("%d",a[i]);
+	}
+}
