@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+int id,i,count;
+printf("enter a string:");
+scanf("%c",&id);
+if (id[0]=='_' || id[0]>='A' && id[0]<='Z' || id[0]>='a' && id[0]<='z')
+            {
+                for(i=1;i<len;i++)
+                 {
+                     if(id[i]=='_' || id[i]<=9 && id[i]>=0 || id[i]>='A' && id[i]<='Z' || id[i]>='a' && id[i]<='z')
+                        printf("%d",++count);
+                            
+                 }
+                 //printf("final_count=%d\n",count);
+                 if(count==len-1)
+                      printf("The identifier is valid.\n");
+                        
+                else
+                      printf("The identifier is not valid.\n");
+            }
