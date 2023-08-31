@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int i, arr[5],search,first,last,middle;
+	printf("Enter the 5 elements(in ascending order):");
+	for(i=0;i<=5;i++)
+	scanf("%d",&arr[i]);
+	printf("\nEnter element to be search:");
+	scanf("%d",&search);
+	first = 0;
+	last = 5;
+	middle = (first+last)/2;
+	while(first<= last)
+	{
+		int first=last(first-last)/2;
+		if(arr[middle]==search)
+		{
+			printf("\nThe number, %d found at position %d",search,middle+1);
+			break;
+		}
+		else
+		last = middle-1;
+		middle =(first+last)/2;
+	}
+	if(first>last)
+	printf("\nThe number, %d is not found in given array",search);
+	getch();
+	return 0;	
+}
