@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<limits.h>
+#define CAPACITY 100
+
+int queue[CAPACITY];
+unsigned int size=0;
+int enqueue(int data);
+int dequeue();
+int isEmpty();
+int isfull();
+int main()
+{
+	int ch,data;
+	while(1)
+	{
+		printf("main menu");
+		printf("\n 1.enqueue");
+		printf("\n 2.dequeue");
+		printf("\n 3.size");
+		printf("\n 4.exit");
+		printf("select the option:");
+		scanf("%d",&ch);
+		switch(ch)
+		{
+			case 1:
+				printf("\n enter the data:");
+				scanf("%d",&data);
+				if(enqueue(data))
+					printf("elements added to the queue.");
+				else
+				printf("queue is full");
+				break;
+				case 2:
+					data = dequeue();
+					if(data == INT_MIN)
+					printf("queue is empty.");
+					else
+					printf("data=>%d",data);
+					break;
+					case 3:
+						 if (isEmpty())
+                    printf("Queue is empty.");
+                    else 
+                    printf("Queue size => %d", size);
+					break;
+						case 4:
+							exit(0);
+							default:
+								printf("invalid input");
+								break;
+					}
+					printf("\n\n");
+	}
+int enqueue(int data)
+{
+		int rear;
+		if(isfull())
+		{
+			return 0;
+		}
+		else
+		rear = (rear+1)%CAPACITY;
+		size++;
+		queue[rear]=data;
+		return 1;
+	}
+	int dequeue()
+	{
+		int front;
+		int data=INT_MIN;
+		if(isempty())
+		{
+			return INT_MIN;
+		}
+		else
+		data = queue[front];
+		front=(front+1)%CAPACITY;
+		size--;
+		return data;
+	}
+}
+int isFull()
+{
+    return (size == CAPACITY);
+}
+int isEmpty()
+{
+    return (size == 0);
+}
